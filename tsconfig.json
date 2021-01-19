@@ -1,0 +1,10 @@
+{
+  "extends": "@tsconfig/node12/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "baseUrl": "."
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules/**/*"]
+}
