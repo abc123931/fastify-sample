@@ -2,9 +2,10 @@
   "name": "fastify-sample",
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "build": "NODE_ENV=production webpack --config ./webpack/prod.config.js",
     "compile-schemas": "json2ts -i ./src/schemas -o ./src/types",
-    "dev": "NODE_ENV=dev webpack --watch --config ./webpack/dev.config.js & nodemon dist/server.js"
+    "dev": "NODE_ENV=dev webpack --watch --config ./webpack/dev.config.js & nodemon dist/server.js",
+    "start": "node ./dist/server.js"
   },
   "devDependencies": {
     "@tsconfig/node12": "^1.0.7",
