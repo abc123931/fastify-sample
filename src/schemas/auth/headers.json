@@ -1,0 +1,9 @@
+{
+  "title": "Auth Headers",
+  "type": "object",
+  "properties": {
+    "H-Custom": { "type": "string" }
+  },
+  "additionalProperties": false,
+  "required": ["H-Custom"]
+}
