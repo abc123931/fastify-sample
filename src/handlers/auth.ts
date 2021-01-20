@@ -6,6 +6,7 @@ import type { AuthQuerystring } from "src/types/auth/querystring";
 
 export const authOpts = {
   schema: {
+    tags: ["user"],
     querystring: AuthQuerystringSchema,
     headers: AuthHeadersSchema,
   },

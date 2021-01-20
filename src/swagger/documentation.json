@@ -1,0 +1,59 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "test-api",
+    "version": "1.0.0",
+    "description": "testのAPI"
+  },
+  "host": "localhost:8081",
+  "schemes": ["http", "https", "ws"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "definitions": {},
+  "tags": [
+    { "name": "user", "description": "User related end-points" },
+    { "name": "code", "description": "Code related end-points" }
+  ],
+  "externalDocs": { "url": "https://swagger.io", "description": "github page" },
+  "paths": {
+    "/ping": {
+      "get": {
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": { "message": { "type": "string" } }
+            },
+            "description": "Default Response"
+          }
+        }
+      }
+    },
+    "/auth": {
+      "get": {
+        "tags": ["user"],
+        "parameters": [
+          {
+            "type": "string",
+            "required": true,
+            "in": "query",
+            "name": "username"
+          },
+          {
+            "type": "string",
+            "required": true,
+            "in": "query",
+            "name": "password"
+          },
+          {
+            "in": "header",
+            "name": "H-Custom",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": { "200": { "description": "Default Response" } }
+      }
+    }
+  }
+}
