@@ -5,7 +5,9 @@
     "build": "NODE_ENV=production webpack --config ./webpack/prod.config.js",
     "compile-schemas": "json2ts -i ./src/schemas -o ./src/types",
     "dev": "NODE_ENV=dev webpack --watch --config ./webpack/dev.config.js & nodemon dist/server.js",
-    "start": "node ./dist/server.js"
+    "start": "node ./dist/server.js",
+    "prisma:migrate": "prisma migrate dev",
+		"prisma:studio": "prisma studio"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
@@ -21,6 +23,7 @@
     "node-dev": "^7.1.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.0",
+    "prisma": "3.6.0",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2",
@@ -30,6 +33,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
+    "@prisma/client": "3.6.0",
     "fastify": "^3.24.1",
     "fastify-basic-auth": "^2.2.0",
     "fastify-swagger": "^4.12.6"

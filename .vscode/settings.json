@@ -1,9 +1,10 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.importModuleSpecifier": "non-relative",
+	"[prisma]": { "editor.defaultFormatter": "Prisma.prisma" },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "eslint.validate": ["json", "javascript", "typescript"],
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
 }
