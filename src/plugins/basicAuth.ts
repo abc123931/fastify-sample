@@ -1,6 +1,6 @@
-import fp from "fastify-plugin";
+import type { FastifyPluginAsync } from "fastify";
 import fastifyBasicAuth from "fastify-basic-auth";
-import fastify, { FastifyPluginAsync } from "fastify";
+import fp from "fastify-plugin";
 
 export const basicAuthPlugin: FastifyPluginAsync = fp(async (fastify) => {
   fastify.register(fastifyBasicAuth, {

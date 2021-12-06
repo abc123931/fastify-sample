@@ -1,5 +1,6 @@
-import { FastifyPluginAsync } from "fastify";
-import { Query, querySchema, responseSchema } from "src/schemas/authSchema";
+import type { FastifyPluginAsync } from "fastify";
+import type { Query } from "src/schemas/authSchema";
+import { querySchema, responseSchema } from "src/schemas/authSchema";
 
 export const authController: FastifyPluginAsync = async (fastify) => {
   fastify.addHook("onRequest", fastify.basicAuth);

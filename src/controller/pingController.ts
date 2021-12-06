@@ -1,5 +1,6 @@
-import { FastifyPluginAsync } from "fastify";
-import { Params, Response, responseSchema } from "src/schemas/pingSchema";
+import type { FastifyPluginAsync } from "fastify";
+import type { Params, Response } from "src/schemas/pingSchema";
+import { responseSchema } from "src/schemas/pingSchema";
 
 export const pingController: FastifyPluginAsync = async (fastify) => {
   fastify.addHook("preHandler", async (request) => {

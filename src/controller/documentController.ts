@@ -1,6 +1,6 @@
+import type { FastifyPluginAsync } from "fastify";
 import fastifyBasicAuth from "fastify-basic-auth";
 import { fastifySwagger } from "fastify-swagger";
-import { FastifyPluginAsync } from "fastify";
 
 export const documentController: FastifyPluginAsync = async (fastify) => {
   fastify.register(fastifyBasicAuth, {

@@ -1,4 +1,4 @@
-import { FastifyPluginAsync } from "fastify";
+import type { FastifyPluginAsync } from "fastify";
 import { authController } from "src/controller/authController";
 import { documentController } from "src/controller/documentController";
 import { pingController } from "src/controller/pingController";

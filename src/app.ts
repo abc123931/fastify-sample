@@ -1,4 +1,4 @@
-import { FastifyPluginAsync } from "fastify";
+import type { FastifyPluginAsync } from "fastify";
 import { basicAuthPlugin } from "src/plugins/basicAuth";
 import { prismaPlugin } from "src/plugins/prisma";
 import { router } from "src/router";
