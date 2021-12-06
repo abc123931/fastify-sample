@@ -1,28 +1,24 @@
 import { FastifyPluginAsync } from "fastify";
-import AuthHeadersSchema from "src/schemas/auth/headers.json";
-import AuthQuerystringSchema from "src/schemas/auth/querystring.json";
-import type { AuthHeaders } from "src/types/auth/headers";
-import type { AuthQuerystring } from "src/types/auth/querystring";
+import { Query, querySchema, responseSchema } from "src/schemas/authSchema";
 
 export const authController: FastifyPluginAsync = async (fastify) => {
   fastify.addHook("onRequest", fastify.basicAuth);
 
   fastify.get<{
-    Querystring: AuthQuerystring;
-    Headers: AuthHeaders;
+    Querystring: Query;
   }>(
     "/auth",
     {
       schema: {
-        tags: ["user"],
-        querystring: AuthQuerystringSchema,
-        headers: AuthHeadersSchema,
+        querystring: querySchema,
+        response: {
+          200: responseSchema,
+        },
       },
     },
     async (request, reply) => {
       const { username, password } = request.query;
-      const customerHeader = request.headers["h-custom"];
-      request.log.info(username, password, customerHeader);
+      request.log.info(username, password);
       reply.status(200).send("logged in!");
     }
   );

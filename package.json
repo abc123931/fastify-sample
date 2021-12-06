@@ -3,7 +3,6 @@
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production webpack --config ./webpack/prod.config.js",
-    "compile-schemas": "json2ts -i ./src/schemas -o ./src/types",
     "dev": "NODE_ENV=dev webpack --watch --config ./webpack/dev.config.js & nodemon dist/server.js",
     "start": "node ./dist/server.js",
     "prisma:migrate": "prisma migrate dev",
@@ -19,7 +18,6 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "json-schema-to-typescript": "^10.1.5",
     "node-dev": "^7.1.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.0",
