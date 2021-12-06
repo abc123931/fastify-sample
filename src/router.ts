@@ -7,6 +7,6 @@ export const router: FastifyPluginAsync = async (fastify) => {
   if (process.env.NODE_ENV === "development") {
     fastify.register(documentController);
   }
-  fastify.register(pingController);
+  fastify.register(pingController, { prefix: "/ping" });
   fastify.register(authController);
 };
