@@ -5,9 +5,7 @@ import type { AuthHeaders } from "src/types/auth/headers";
 import type { AuthQuerystring } from "src/types/auth/querystring";
 
 export const authController: FastifyPluginAsync = async (fastify) => {
-  fastify.addHook("preHandler", async (request) => {
-    request.log.info("preHandler auth");
-  });
+  fastify.addHook("onRequest", fastify.basicAuth);
 
   fastify.get<{
     Querystring: AuthQuerystring;
