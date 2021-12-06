@@ -107,6 +107,11 @@
   resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727.tgz#c68ede6aeffa9ef7743a32cfa6daf9172a4e15b3"
   integrity sha512-dRClHS7DsTVchDKzeG72OaEyeDskCv91pnZ72Fftn0mp4BkUvX2LvWup65hCNzwwQm5IDd6A88APldKDnMiEMA==
 
+"@sinclair/typebox@^0.23.1":
+  version "0.23.1"
+  resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.23.1.tgz#14a945aa26a41a875a219db00b293c0bbe4fb804"
+  integrity sha512-XsmyWfps86gFmZhK97HDesbCe/pR+8qf/VveZaADI6oCk0cHGq6WeKdUHM/a8NeSetv/vpUf19ubwU34C2PVWw==
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"

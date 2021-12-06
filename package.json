@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=dev webpack --watch --config ./webpack/dev.config.js & nodemon dist/server.js",
     "start": "node ./dist/server.js",
     "prisma:migrate": "prisma migrate dev",
-		"prisma:studio": "prisma studio"
+    "prisma:studio": "prisma studio"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@prisma/client": "3.6.0",
+    "@sinclair/typebox": "^0.23.1",
     "fastify": "^3.24.1",
     "fastify-basic-auth": "^2.2.0",
     "fastify-swagger": "^4.12.6"

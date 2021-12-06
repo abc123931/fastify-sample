@@ -1,13 +1,8 @@
-import type { FastifyInstance } from "fastify/types/instance";
 import fastifyBasicAuth from "fastify-basic-auth";
 import { fastifySwagger } from "fastify-swagger";
-import type { IncomingMessage, Server, ServerResponse } from "http";
+import { FastifyPluginAsync } from "fastify";
 
-export const documentRoutes = async (
-  fastify: FastifyInstance<Server, IncomingMessage, ServerResponse>,
-  _opts: { prefix: string },
-  next: (err?: Error) => void
-) => {
+export const documentController: FastifyPluginAsync = async (fastify) => {
   fastify.register(fastifyBasicAuth, {
     validate: (username, password, _req, _reply, done) => {
       if (username === "Tyrion" && password === "wine") {
@@ -27,8 +22,6 @@ export const documentRoutes = async (
     exposeRoute: true,
   });
 
-  fastify.after(() => {
-    fastify.addHook("onRequest", fastify.basicAuth);
-  });
-  next();
+  await fastify.after();
+  fastify.addHook("onRequest", fastify.basicAuth);
 };
